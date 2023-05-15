@@ -1,20 +1,20 @@
-﻿using DefaultNamespace;
-using Entitas;
-using Services;
+﻿using Entitas;
 
 public class RegisterInputServiceSystem : IInitializeSystem
 {
-    private readonly Contexts _contexts;
+    private readonly Contexts _context;
     private readonly IInputService _inputService;
 
-    public RegisterInputServiceSystem(Contexts contexts, IInputService inputService)
+    public RegisterInputServiceSystem(Contexts context, IInputService inputService)
     {
-        _contexts = contexts;
+        _context = context;
         _inputService = inputService;
     }
 
     public void Initialize()
     {
-        _contexts.game.ReplaceInputService(_inputService);
+        var e = _context.input.CreateEntity();
+        e.ReplaceInputService(_inputService);
+        e.ReplaceInput(false, 0f);
     }
 }

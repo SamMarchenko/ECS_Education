@@ -1,8 +1,10 @@
 ﻿using Entitas;
-using UnityEngine;
 
-[Game]
-public class ViewComponent : IComponent
+namespace Components
 {
-    public GameObject Value;
+    [Game]
+    public class ViewComponent : IComponent
+    {
+        public IView instance;
+    }
 }

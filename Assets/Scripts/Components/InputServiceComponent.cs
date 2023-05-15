@@ -1,10 +1,9 @@
 ﻿using Entitas;
 using Entitas.CodeGeneration.Attributes;
-using Services;
 
-namespace DefaultNamespace.Components
+namespace Components
 {
-    [Game, Unique]
+    [Input, Unique]
     public class InputServiceComponent : IComponent
     {
         public IInputService instance;
